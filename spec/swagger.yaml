@@ -21,7 +21,7 @@
                     {
                         "name": "amount",
                         "in": "query",
-                        "description": "amount to be paid",
+                        "description": "amount to be paid by client",
                         "required": true,
                         "type": "string"
                     },
