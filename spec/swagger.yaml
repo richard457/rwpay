@@ -1,43 +1,34 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "YeGoBox API",
-        "version": "1.0.0"
+        "title": "RwPay API",
+        "version": "0.0.0"
     },
     "basePath": "/api",
     "paths": {
-        "/files": {
-            "get": {
-                "summary": "List User Files",
-                "operationId": "getUserFiles",
-                "parameters": [
-                    {
-                        "name": "all",
-                        "in": "query",
-                        "description": "all Files of current user.",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    },
-                    "406": {
-                        "description": "not acceptable"
-                    },
-                    "500": {
-                        "description": "internal server error"
-                    }
-                }
-            },
+        "/transaction_token": {
             "post": {
-                "summary": "Upload new file",
+                "summary": "Get token for transaction",
+                "operationId": "getTransactionToken",
                 "parameters": [
                     {
-                        "name": "file",
+                        "name": "commerce_transaction_number",
                         "in": "query",
-                        "description": "Upload File to YegoBox",
+                        "description": "reference number",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "amount to be paid",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "payment_type",
+                        "in": "query",
+                        "description": "method of payment(momo,airtel,card) ",
                         "required": true,
                         "type": "string"
                     }
