@@ -1,0 +1,60 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "YeGoBox API",
+        "version": "1.0.0"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/files": {
+            "get": {
+                "summary": "List User Files",
+                "operationId": "getUserFiles",
+                "parameters": [
+                    {
+                        "name": "all",
+                        "in": "query",
+                        "description": "all Files of current user.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Upload new file",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "description": "Upload File to YegoBox",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
